@@ -8,12 +8,9 @@
 *.o
 *.obj
 
-# Cartelle Git
-.git/
-
-# File temporanei VS Code
+# VS Code
 .vscode/
 
-# Backup
+# Backup e temporanei
 *.bak
 *.tmp
