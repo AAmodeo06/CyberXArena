@@ -1,65 +1,73 @@
-CYBERXARENA LMS
+# CyberXArena
 
-Progetto in linguaggio C con database MySQL/MariaDB per la gestione base di una piattaforma corsi online.
+CyberXArena è una piattaforma didattica sviluppata in linguaggio C che permette la gestione di corsi, lezioni, feedback, statistiche e avanzamento degli utenti tramite un database MariaDB.
 
-REQUISITI
-- XAMPP con MySQL attivo
-- MSYS2 UCRT64
-- GCC
-- mingw32-make
-- Librerie MariaDB client
+## Funzionalità
 
-DATABASE
-Importare il file:
+- Gestione utenti e autenticazione
+- Gestione corsi
+- Gestione lezioni
+- Gestione feedback
+- Monitoraggio avanzamento
+- Statistiche e report
+- Integrazione con database MariaDB
 
+## Struttura del progetto
+
+```
+CyberXArena
+│
+├── Include/          # Header files
+├── src/              # Codice sorgente
+├── sql/              # Schema database
+├── Makefile          # Compilazione
+├── README.md
+└── .gitignore
+```
+
+## Requisiti
+
+- GCC (MSYS2 UCRT64)
+- MariaDB Client Library
+- XAMPP / MariaDB
+
+## Configurazione database
+
+1. Avviare MariaDB tramite XAMPP.
+2. Creare un database chiamato:
+
+```sql
+cyberxarena
+```
+
+3. Importare il file:
+
+```text
 sql/Schema.sql
+```
 
-Esempio comando:
+## Parametri di connessione
 
-/c/xampp/mysql/bin/mysql.exe -u root -P 3307 -h 127.0.0.1 < sql/Schema.sql
+Nel file `src/database.c`:
 
-Se MySQL usa la porta 3306, sostituire 3307 con 3306.
+```c
+#define DB_HOST "127.0.0.1"
+#define DB_USER "root"
+#define DB_PASS ""
+#define DB_NAME "cyberxarena"
+#define DB_PORT 3307
+```
 
-CONFIGURAZIONE DATABASE
-La configurazione del database si trova in:
+## Compilazione
 
-src/database.c
+Aprire il terminale MSYS2 UCRT64 nella cartella del progetto ed eseguire:
 
-Controllare questi valori:
-
-DB_HOST
-DB_USER
-DB_PASS
-DB_NAME
-DB_PORT
-
-Nel progetto la porta è impostata su 3307.
-
-COMPILAZIONE
-Aprire MSYS2 UCRT64 nella cartella del progetto ed eseguire:
-
-mingw32-make clean
+```bash
 mingw32-make
+```
 
-ESECUZIONE
-Sempre da MSYS2 UCRT64:
+## Avvio
 
+```bash
 ./cyberxarena.exe
-
-CREDENZIALI ADMIN DI TEST
-Email: admin@example.com
-Password: admin123
-
-FUNZIONALITA IMPLEMENTATE
-- Connessione al database
-- Registrazione studente
-- Login utente
-- Menu studente
-- Menu docente/admin
-- Visualizzazione catalogo corsi
-- Creazione corsi da docente/admin
-- Iscrizione studente a un corso
-- Visualizzazione corsi iscritti
-
-SVILUPPI FUTURI
-Le funzionalità ancora da completare sono indicate nel file TODO.txt.
+```
