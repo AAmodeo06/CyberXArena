@@ -55,7 +55,7 @@ Nel file `src/database.c`:
 #define DB_USER "root"
 #define DB_PASS ""
 #define DB_NAME "cyberxarena"
-#define DB_PORT 3307
+#define DB_PORT 3306
 ```
 
 ## Compilazione
