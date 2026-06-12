@@ -1,0 +1,19 @@
+# Eseguibili
+*.exe
+
+# Librerie runtime
+*.dll
+
+# File oggetto
+*.o
+*.obj
+
+# Cartelle Git
+.git/
+
+# File temporanei VS Code
+.vscode/
+
+# Backup
+*.bak
+*.tmp
