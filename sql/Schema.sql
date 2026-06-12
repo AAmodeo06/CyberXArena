@@ -55,8 +55,10 @@ CREATE TABLE IF NOT EXISTS feedback (
 );
 
 INSERT IGNORE INTO utenti (nome, email, password, ruolo)
+VALUES
 ('Admin', 'admin@example.com', 'admin123', 'admin');
 
 INSERT IGNORE INTO corsi(titolo, descrizione, categoria, livello, durata, num_lezioni, docente_id)
+VALUES
 ('Programmazione', 'Introduzione alla programmazione in C', 'Programmazione', 'base', 20, 10, 1),
 ('Basi di Dati', 'Fondamenti di database relazionali', 'Database', 'intermedio', 15, 8, 1);
